@@ -9,14 +9,19 @@
 import UIKit
 
 class DataViewController: UIViewController {
+    
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 
     @IBOutlet weak var dataLabel: UILabel!
     var dataObject: AnyObject?
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +31,7 @@ class DataViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let obj: AnyObject = dataObject {
+        if let obj: NSDictionary = dataObject as? NSDictionary {
             self.dataLabel!.text = obj.description
         } else {
             self.dataLabel!.text = ""

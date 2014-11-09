@@ -20,25 +20,32 @@ import UIKit
 
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
-    var pageData = NSArray()
-
+    var results : NSArray = [["post_url":"http://yahoo.co.jp"]]
 
     override init() {
         super.init()
         // Create the data model.
         let dateFormatter = NSDateFormatter()
-        pageData = dateFormatter.monthSymbols
+        //var model : taggedModel = taggedModel()
+        //model.request()
+        
+        TMAPIClient.sharedInstance().tagged("cat", parameters: nil) { (results : AnyObject!, error : NSError!) -> Void in
+            self.results = results as NSArray
+            NSLog("%@", self.results)
+            NSNotificationCenter.defaultCenter().postNotificationName("apiRequestDoneNotification", object: nil, userInfo: nil)
+        }
+            
     }
 
     func viewControllerAtIndex(index: Int, storyboard: UIStoryboard) -> DataViewController? {
         // Return the data view controller for the given index.
-        if (self.pageData.count == 0) || (index >= self.pageData.count) {
+        if (self.results.count == 0) || (index >= self.results.count) {
             return nil
         }
 
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewControllerWithIdentifier("DataViewController") as DataViewController
-        dataViewController.dataObject = self.pageData[index]
+        dataViewController.dataObject = self.results[index]
         return dataViewController
     }
 
@@ -46,7 +53,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         // Return the index of the given data view controller.
         // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
         if let dataObject: AnyObject = viewController.dataObject {
-            return self.pageData.indexOfObject(dataObject)
+            return self.results.indexOfObject(dataObject)
         } else {
             return NSNotFound
         }
@@ -71,7 +78,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         }
         
         index++
-        if index == self.pageData.count {
+        if index == self.results.count {
             return nil
         }
         return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)

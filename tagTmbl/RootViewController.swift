@@ -12,12 +12,17 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
     var pageViewController: UIPageViewController?
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // Configure the page view controller and add it as a child view controller.
-        self.pageViewController = UIPageViewController(transitionStyle: .PageCurl, navigationOrientation: .Horizontal, options: nil)
+        
+        
+        self.pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         self.pageViewController!.delegate = self
 
         let startingViewController: DataViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
@@ -40,6 +45,15 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
         // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
         self.view.gestureRecognizers = self.pageViewController!.gestureRecognizers
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"apiRequestDone:" , name: "apiRequestDoneNotification", object: nil)
+        
+    }
+    
+    func apiRequestDone(NSNotification) -> Void {
+        let startingViewController: DataViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
+        let viewControllers: NSArray = [startingViewController]
+        self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: {done in })
     }
 
     override func didReceiveMemoryWarning() {
