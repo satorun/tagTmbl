@@ -54,6 +54,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         let startingViewController: DataViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
         let viewControllers: NSArray = [startingViewController]
         self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: {done in })
+        
     }
 
     override func didReceiveMemoryWarning() {

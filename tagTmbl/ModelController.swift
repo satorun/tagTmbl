@@ -30,6 +30,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         //model.request()
         
         TMAPIClient.sharedInstance().tagged("cat", parameters: nil) { (results : AnyObject!, error : NSError!) -> Void in
+            
             self.results = results as NSArray
             NSLog("%@", self.results)
             NSNotificationCenter.defaultCenter().postNotificationName("apiRequestDoneNotification", object: nil, userInfo: nil)

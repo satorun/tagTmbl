@@ -19,9 +19,14 @@ class loginViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidAppear(animated: Bool) {
+        self.client = TMAPIClient.sharedInstance()
         
-        
+        if (self.isLogin()) {
+            self.performSegueWithIdentifier("login", sender: nil);
+        } else {
+            login()
+        }
     }
     
     
@@ -50,16 +55,6 @@ class loginViewController: UIViewController {
             return true
         }
         return false
-    }
-    
-    @IBAction func tapLogin(sender: AnyObject) {
-        self.client = TMAPIClient.sharedInstance()
-        
-        if (self.isLogin()) {
-            self.performSegueWithIdentifier("login", sender: nil);
-        } else {
-            login()
-        }
     }
     
 }

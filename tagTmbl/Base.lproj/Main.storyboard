@@ -15,22 +15,7 @@
                     <view key="view" contentMode="scaleToFill" id="cUF-1N-OrQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpZ-Ot-dgW">
-                                <rect key="frame" x="277" y="285" width="33" height="30"/>
-                                <state key="normal" title="login">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="tapLogin:" destination="JiE-kw-LKC" eventType="touchUpInside" id="iwr-MR-uTQ"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="tpZ-Ot-dgW" secondAttribute="centerY" id="Fin-Oa-DIx"/>
-                            <constraint firstAttribute="centerX" secondItem="tpZ-Ot-dgW" secondAttribute="centerX" id="ubz-BQ-ahD"/>
-                        </constraints>
                     </view>
                     <connections>
                         <segue destination="703-4V-yAM" kind="show" identifier="login" id="nRi-8V-CSN"/>
