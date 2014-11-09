@@ -1,3 +1,6 @@
+# Mac
+*.DS_Store
+*.swp
 # Xcode
 #
 build/
@@ -25,3 +28,6 @@ DerivedData
 #
 Pods/
 *.xcworkspace/
+
+# Secret file
+*/SecretConfig.swift

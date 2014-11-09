@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230F0FD51A0F6EB60032BA94 /* SecretConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230F0FD41A0F6EB60032BA94 /* SecretConfig.swift */; };
 		23FCF0981A0F57B800EF023A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FCF0971A0F57B800EF023A /* AppDelegate.swift */; };
 		23FCF09A1A0F57B800EF023A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FCF0991A0F57B800EF023A /* RootViewController.swift */; };
 		23FCF09C1A0F57B800EF023A /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FCF09B1A0F57B800EF023A /* DataViewController.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		12232CF9692FCBBCA6081CB7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		230F0FCC1A0F5BF80032BA94 /* tagTmbl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tagTmbl-Bridging-Header.h"; sourceTree = "<group>"; };
+		230F0FD41A0F6EB60032BA94 /* SecretConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretConfig.swift; sourceTree = "<group>"; };
 		23FCF0921A0F57B800EF023A /* tagTmbl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tagTmbl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23FCF0961A0F57B800EF023A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23FCF0971A0F57B800EF023A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,10 +96,11 @@
 				23FCF09B1A0F57B800EF023A /* DataViewController.swift */,
 				23FCF09D1A0F57B800EF023A /* ModelController.swift */,
 				23FCF09F1A0F57B800EF023A /* Main.storyboard */,
+				230F0FCC1A0F5BF80032BA94 /* tagTmbl-Bridging-Header.h */,
 				23FCF0A21A0F57B800EF023A /* Images.xcassets */,
 				23FCF0A41A0F57B800EF023A /* LaunchScreen.xib */,
 				23FCF0951A0F57B800EF023A /* Supporting Files */,
-				230F0FCC1A0F5BF80032BA94 /* tagTmbl-Bridging-Header.h */,
+				230F0FD41A0F6EB60032BA94 /* SecretConfig.swift */,
 			);
 			path = tagTmbl;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				230F0FD51A0F6EB60032BA94 /* SecretConfig.swift in Sources */,
 				23FCF09A1A0F57B800EF023A /* RootViewController.swift in Sources */,
 				23FCF09E1A0F57B800EF023A /* ModelController.swift in Sources */,
 				23FCF09C1A0F57B800EF023A /* DataViewController.swift in Sources */,
