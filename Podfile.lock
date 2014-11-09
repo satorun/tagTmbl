@@ -1,0 +1,22 @@
+PODS:
+  - JXHTTP (1.0.3)
+  - TMTumblrSDK/APIClient (1.1.1):
+    - JXHTTP (~> 1.0)
+    - TMTumblrSDK/APIClient/Authentication
+  - TMTumblrSDK/APIClient/Authentication (1.1.1):
+    - JXHTTP (~> 1.0)
+    - TMTumblrSDK/Core
+  - TMTumblrSDK/Core (1.1.1)
+
+DEPENDENCIES:
+  - TMTumblrSDK/APIClient (from `https://github.com/tumblr/TMTumblrSDK.git`)
+
+EXTERNAL SOURCES:
+  TMTumblrSDK:
+    :git: https://github.com/tumblr/TMTumblrSDK.git
+
+SPEC CHECKSUMS:
+  JXHTTP: b84f7a2157f7ce4554f8f0f0eef3704d5c1cbdac
+  TMTumblrSDK: 8705640eaa3f6d1021dbeca7d26c082175d8e024
+
+COCOAPODS: 0.34.4
